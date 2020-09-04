@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest",
     "grade": "jest --useStderr --json --outputFile=./tests/result.json",
     "submit": "node submit.js"
   },
