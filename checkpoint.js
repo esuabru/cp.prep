@@ -20,7 +20,11 @@ function sumaTodos(array) {
   // Nota: Los numeros estan ordenados de menor a mayor.
 
   // Tu código aca:
-  
+
+  var suma = 0;
+  for (var i = 0; i <array.length; i++)
+  	suma = suma + array[i];
+  return suma
 }
 
 function checkInventario(inventario, item) {
@@ -42,7 +46,11 @@ function checkInventario(inventario, item) {
   // checkInventario(inventario, 'tenedor') devuelve => 6
 
   // Tu código aca:
-  
+  for (var i = 0; i < inventario.length; i++) {
+  	if (inventario[i].nombre === item)
+  		return inventario[i].cantidad;
+  }
+  return 0  
 }
 
 function numeroSimetrico(num) {
@@ -53,7 +61,13 @@ function numeroSimetrico(num) {
   // numeroSimetrico(11711) devuelve true
 
   // Tu código:
-
+  numsrc  = num.toString();
+  nums = numsrc.split(' ').reverse().join();
+  numa = nums.parseInt 
+  for (i = 0; i < nums.length; i++) {
+  	if (nums[i] == num) 
+  		return true; 	
+  }
 }
 
 function index() {
@@ -82,7 +96,11 @@ function crearClasePersona() {
   // Esta funcion debe retonar la clase Persona.
 
   class Persona {
-    constructor() {
+    constructor(nombre, edad, hobbies, amigos) {
+    	this.nombre = nombre
+    	this.edad = edad;
+    	this.hobbies = hobbies;
+    	this.amigos = amigos;
 
     }
 
@@ -90,27 +108,29 @@ function crearClasePersona() {
       // el metodo addFriend recibe un string nombre y un entero edad y debe agregar un objeto:
       // { nombre: nombre, edad: edad} al arreglo de amigos de la persona.
       // no debe retornar nada.
-      
+    this.amigos.push({nombre: nombre, edad: edad});
     }
 
     addHobby(hobby) {
       // este método debe agregar un hobby (hobby) al arreglo de hobbies de la persona.
       // no debe retornar nada.
-
+   this.hobbies.push({hobby: hobbies});
     }
     getFriends() {
       // Escribe una función que retorne un arreglo con sólo los nombres del arreglo de amigos
       // de la persona.
       // Ej:
       // persona.getFriends() // retorna ['toni', 'Leo', 'Manu']
-
+	susamigos = [this.amigos];
+		
     }
 
     getHobbies() {
       // Escribe una función que retorne un arreglo con los hobbies de la persona
       // Ej:
       // persona.getHobbies() // retorna ['correr', 'dormir', 'nadar']
-
+      return this.hobbies;
+      
     }
 
     getPromedioEdad() {
